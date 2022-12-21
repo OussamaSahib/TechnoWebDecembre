@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Réservation</title>
+</head>
+<body>
+    <div id="content">
+        <h1>Réservation</h1>
+        <form method="POST" id="form1" action="/home/new">
+            <div>
+                <label for="destination">Destination</label>
+                <input type="text" name="destination" required>
+            </div>
+            <div>
+                <label for="nbseat">Nombre de places</label>
+                <input type="number" min="0" name="nbseat" id="nbseat" required>
+            </div>
+            <div>
+                <label for="assurance">Assurance</label>
+                <input type="checkbox" name="assurance" id="assurance">
+                </radio>
+            </div>
+            
+            <div>
+                <input type="hidden" name="idreservation"/><br/>
+            </div>
+
+            <div>
+                <input type="submit" value="Etape suivante">
+            </div>
+        </form>
+        <button id="bt_total">Caculer le total</button>
+        <div id="total">Total de la réservation : </div>
+    </div>
+    <script src="util.js"></script>
+</body>
+
+<script>
+    let boutton= document.getElementById("bt_total");
+    boutton.addEventListener("click", CalculPrix);
+
+    function CalculPrix(event){
+        let nb_place= document.getElementById("nbseat").value;
+        let assurance= document.getElementById("assurance");
+        let prix= document.getElementById("total");
+        
+        if(assurance.checked){
+            prix.innerText= "Total de la réservation : " +(45*nb_place +20);
+        }
+        else{
+            prix.innerText= "Total de la réservation : " +45*nb_place;
+        }
+        
+        event.preventDefault();
+        event.stopPropagation();
+    }    
+</script>
+</html>

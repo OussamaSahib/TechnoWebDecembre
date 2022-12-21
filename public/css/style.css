@@ -1,0 +1,27 @@
+body
+{width: 500px;
+height: 300px;
+font-family: Arial, serif;
+font-size: 12px;
+border: 1px black solid;
+margin: 10px;
+padding: 10px;
+background-color: lightblue;}
+
+#form1
+{border: 1px black solid;
+width: 400px;
+margin: 10px;
+padding: 10px;}
+
+#form2
+{border: 1px black solid;
+width: 400px;
+margin: 10px;
+padding: 10px;}
+
+.label,  input[type=text],  input[type=number]
+{margin: 10px;}
+
+.text_confirmation
+{text-align: center;}
